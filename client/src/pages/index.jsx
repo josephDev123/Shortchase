@@ -6,11 +6,11 @@ export default function Index() {
   
   return (
     <div className='h-screen flex flex-col justify-center items-center landing_wrapper '>
-      <div className='bg-slate-50  flex flex-col gap-4 justify-start items-center rounded-xl p-9'>
+      <div className='bg-slate-50 w-full  flex flex-col gap-4 justify-start items-center rounded-xl p-9'>
         <img src='https://raw.githubusercontent.com/josephDev123/Shortchase/master/client/src/assets/images/shortchase-logo.png' alt='' className='w-16 h-16 mt-6 rounded-full bg-yellow-300' />
         <h3 className='font-bold'>Welcome to ShortChase</h3>
         <p>Predict what's ahead</p>
-        <Link to='/register' className='bg-yellow-300 p-2 px-5 font-light text-xs w-5/6 rounded-full text-center'>Sign up with phone or email</Link >
+        <Link to='/register' className='bg-yellow-300 p-2 px-5 font-extrabold text-xs w-5/6 rounded-full text-center'>Sign Up with phone or email</Link >
         <p className='text-center w-80 text-xs'>By signing up, you agree to shortChase's<br/> <span className='font-bold'>term and condition</span> and acknowledge you have
           read our <br/><span className='font-bold'>privacy policies</span>, including <span className='font-bold'>cookie use</span>
         </p>
