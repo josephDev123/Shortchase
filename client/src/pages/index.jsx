@@ -9,7 +9,7 @@ export default function Index() {
         <img src='/src/assets/images/shortchase-logo.png' alt='' className='w-16 h-16 mt-6 rounded-full bg-yellow-300' />
         <h3 className='font-bold'>Welcome to ShortChase</h3>
         <p>Predict what's ahead</p>
-        <button className='bg-yellow-300 p-2 px-5 font-light text-xs w-5/6 rounded-full'>Sign up with phone or email</button>
+        <Link to='/register' className='bg-yellow-300 p-2 px-5 font-light text-xs w-5/6 rounded-full'>Sign up with phone or email</Link >
         <p className='text-center w-80 text-xs'>By signing up, you agree to shortChase's<br/> <span className='font-bold'>term and condition</span> and acknowledge you have
           read our <br/><span className='font-bold'>privacy policies</span>, including <span className='font-bold'>cookie use</span>
         </p>
