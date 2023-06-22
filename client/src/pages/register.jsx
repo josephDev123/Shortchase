@@ -43,7 +43,7 @@ const [loading, setLoading] = useState(false);
     <div className='h-screen flex justify-center items-center w-4/5 mx-auto'>
         <div className='flex flex-col gap-4 rounded-md  p-4 pb-6'>
             <Link to='/' className='self-end'><i className="fa-solid fa-square-xmark"></i></Link>
-            <img src='/src/assets/images/shortchase-logo.png' alt='' className='w-32 h-32 self-center'/>
+            <img src='https://raw.githubusercontent.com/josephDev123/Shortchase/master/client/src/assets/images/shortchase-logo.png' alt='' className='w-32 h-32 self-center'/>
             <hr/>
             <label>Create your Account</label>
             <input type='text' className='w-full p-3 border rounded-md ' placeholder='name' onChange={(e)=>setname(e.target.value)}/>
