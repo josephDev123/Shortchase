@@ -1,0 +1,5 @@
+.landing_wrapper{
+    background-image: url('/src/assets/images/bg-image1.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
