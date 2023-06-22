@@ -48,7 +48,7 @@ const [loading, setLoading] = useState(false);
             <label>Create your Account</label>
             <input type='text' className='w-full p-3 border rounded-md ' placeholder='name' onChange={(e)=>setname(e.target.value)}/>
             <input type='tel' className='w-full  p-3 border rounded-md' placeholder='phone' onChange={(e)=>setPhone(e.target.value)}/>
-            <Link to='' className='text-blue-500'>Use email instead</Link>
+            <Link to='/login' className='text-blue-500'>Use email instead</Link>
             <p className='font-medium'>Date of Birth</p>
             <p className='w-3/5'>This would not be shown publicly. Confirm your age, even if this account is for a business, a pet or 
                 something else
