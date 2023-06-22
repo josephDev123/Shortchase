@@ -41,12 +41,12 @@ const [loading, setLoading] = useState(false);
 
   return (
     <div className='h-screen flex justify-center items-center w-4/5 mx-auto'>
-        <div className='flex flex-col gap-4 rounded-md  p-4 pb-6'>
+        <div className='flex flex-col gap-4 rounded-md p-4 pb-6'>
             <Link to='/' className='self-end mt-52'><i className="fa-solid fa-square-xmark"></i></Link>
             <img src='https://raw.githubusercontent.com/josephDev123/Shortchase/master/client/src/assets/images/shortchase-logo.png' alt='' className='w-32 h-32 self-center'/>
             <hr/>
             <label>Create your Account</label>
-            <input type='text' className='w-full p-3 border rounded-md ' placeholder='name' onChange={(e)=>setname(e.target.value)}/>
+            <input type='text' className='w-full p-3 border rounded-md' placeholder='name' onChange={(e)=>setname(e.target.value)}/>
             <input type='tel' className='w-full  p-3 border rounded-md' placeholder='phone' onChange={(e)=>setPhone(e.target.value)}/>
             <Link to='/login' className='text-blue-500'>Use email instead</Link>
             <p className='font-medium'>Date of Birth</p>
