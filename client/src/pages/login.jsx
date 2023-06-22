@@ -11,7 +11,7 @@ export default function login() {
           <input type='password' className='border-2 p-3 rounded-xl w-full'></input>
           <p className='text-green-300'>Forget password</p>
           <button className='w-3/4 self-center bg-yellow-300 p-3 rounded-full font-bold'>Log in</button>
-          <p className='text-center'>Dont't have an account? <Link to='/register' className='text-orange-300'>Login in</Link></p>
+          <p className='text-center'>Dont't have an account? <Link to='/register' className='text-orange-300'>Sign Up</Link></p>
       </div>
     </div>
   )
