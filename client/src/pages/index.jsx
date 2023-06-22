@@ -23,7 +23,7 @@ export default function Index() {
           </button>
 
           <button className='border border-t-2 p-2'>
-          <i class="fa-brands fa-google-play text-green-500"></i>
+          <i class="fa-brands fa-google-play text-green-500" ></i>
               Google play 
           </button>
         </span>
