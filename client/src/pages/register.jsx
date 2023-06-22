@@ -50,7 +50,7 @@ const [loading, setLoading] = useState(false);
             <input type='tel' className='w-full  p-3 border rounded-md' placeholder='phone' onChange={(e)=>setPhone(e.target.value)}/>
             <Link to='' className='text-blue-500'>Use email instead</Link>
             <p className='font-medium'>Date of Birth</p>
-            <p>This would not be shown publicly. Confirm your age,<br/> even if this account is for a business, a pet or 
+            <p className='w-3/5'>This would not be shown publicly. Confirm your age, even if this account is for a business, a pet or 
                 something else
             </p>
             <div className='flex justify-between gap-3'>
