@@ -80,12 +80,12 @@ const resolveAfter3Sec = new Promise(resolve => setTimeout(resolve, 5000));
             </p>
             
             <div className='flex justify-between gap-3'>
-                <input type='text' placeholder='Month' className='border-2 w-1/2 p-3 rounded-xl' onChange={(e)=>setMonth(e.target.value)}/> 
+                <input type='text' placeholder='Month' className='border-2 w-full sm:w-1/2 p-3 rounded-xl' onChange={(e)=>setMonth(e.target.value)}/> 
 
-                <input type='number' placeholder='Day' className='border-2 w-1/4 p-3 rounded-xl' onChange={(e)=>setDay(e.target.value)}/> 
+                <input type='number' placeholder='Day' className='border-2 w-full sm:w-1/4 p-3 rounded-xl' onChange={(e)=>setDay(e.target.value)}/> 
                
 
-                <input type='number' placeholder='Year' className='border-2 w-1/3 p-3 rounded-xl' onChange={(e)=>setYear(e.target.value)}/> 
+                <input type='number' placeholder='Year' className='border-2 w-full sm:w-1/3 p-3 rounded-xl' onChange={(e)=>setYear(e.target.value)}/> 
               
             </div>
             <button type='button' onClick={handleRegistration} className='w-full bg-yellow-300 rounded-full p-3 text-slate-900 font-extrabold mt-6 text-center'>Next</button>
