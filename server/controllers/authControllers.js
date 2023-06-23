@@ -27,7 +27,7 @@ export const loginController = async (req, res)=>{
             return res.status(400).json({'status':'error', 'message': "phone is not registered"});
          }
 
-         return res.status(400).json({'status':'success', 'message': "Login successful"});
+         return res.status(200).json({'status':'success', 'message': "Login successful"});
 
    }catch(err){
       console.log(err)

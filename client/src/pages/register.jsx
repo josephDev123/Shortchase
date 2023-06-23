@@ -2,15 +2,21 @@ import React, {useState} from 'react'
 import { Link } from 'react-router-dom'
 import {Authaxios} from '../utils/axiosInstance'
 import { toast, ToastContainer } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 
 export default function register() {
+
 const [name, setname] = useState('');
-const [email, setEmail] = useState('');
+// const [email, setEmail] = useState('');
 const [phone, setPhone] = useState('');
 const [month, setMonth] = useState('');
 const [day, setDay] = useState('');
 const [year, setYear] = useState('');
-const [loading, setLoading] = useState(false);
+// const [loading, setLoading] = useState(false);
+
+const redirect = useNavigate()
+
+const resolveAfter3Sec = new Promise(resolve => setTimeout(resolve, 5000));
 
 // console.log(name)
   async function handleRegistration(e){
@@ -26,10 +32,17 @@ const [loading, setLoading] = useState(false);
         method:'post',
         data: {name, phone, month, day, year}
       });
+
+      toast.promise(resolveAfter3Sec,
+        {
+          pending: 'Promise is pending',
+        }
+    )
       
       const message =  await res.data;
       setLoading(false)
       console.log(message)
+      redirect('/login')
     } catch (error) {
        
       const {status, message} = await error.response.data
@@ -50,7 +63,7 @@ const [loading, setLoading] = useState(false);
     <div className='h-screen flex justify-center items-center w-4/5 mx-auto'>
         <div className='flex flex-col gap-4 rounded-md p-4 pb-6'>
 
-            <Link to='/' className='self-end mt-52'><i className="fa-solid fa-square-xmark"></i></Link>
+            <Link to='/' className='self-end mt-52 text-2xl'><i className="fa-solid fa-square-xmark"></i></Link>
             <img src='https://raw.githubusercontent.com/josephDev123/Shortchase/master/client/src/assets/images/shortchase-logo.png' alt='' className='w-32 h-32 self-center'/>
             <hr/>
 

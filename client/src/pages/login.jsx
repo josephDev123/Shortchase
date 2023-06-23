@@ -3,19 +3,21 @@ import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import { Authaxios } from '../utils/axiosInstance';
 import { toast, ToastContainer } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 
 
 export default function login() {
+
 const[names, setName]= useState('');
 const [phone, setPhone] = useState('')
-// console.log(name, phone)
 
+const redirect = useNavigate()
+const resolveAfter3Sec = new Promise(resolve => setTimeout(resolve, 5000));
 
   async function handleUserLogin(){
     try {
       if(!names || !phone){
         // console.log('Field(s) is empty')
-        // toast.error('Field(s) is empty')
         toast.warn("Field(s) is empty!");
       }else{
         const loginRequest = await Authaxios({
@@ -23,8 +25,14 @@ const [phone, setPhone] = useState('')
           url:'login',
           data:{names, phone}
         })
+        // loading alert
+        toast.promise(resolveAfter3Sec,
+          {
+            pending: 'Promise is pending',
+          }
+      )
         const loginResult =  await loginRequest.data
-        // console.log(loginResult)
+        redirect('/')
       }
     } catch (error) {
       const {status, message} = await error.response.data
