@@ -21,7 +21,7 @@ const schema = mongoose.Schema({
 
     day: {
             type:Number,
-            max: '2'
+            maxLength: '2'
         },
 
     year: {
