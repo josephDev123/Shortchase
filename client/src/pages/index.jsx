@@ -6,7 +6,7 @@ export default function Index() {
   
   return (
     <div className='h-screen flex flex-col justify-center items-center landing_wrapper '>
-      <div className='bg-slate-50 flex flex-col basis-96 gap-4 justify-start items-center rounded-xl p-9 w-full h-full sm:w-auto md:w-auto xl:w-auto'>
+      <div className='bg-slate-50 flex flex-col basis-96 gap-4 justify-start items-center rounded-xl p-9 w-full h-full sm:w-auto'>
         <img src='https://raw.githubusercontent.com/josephDev123/Shortchase/master/client/src/assets/images/shortchase-logo.png' alt='' className='w-16 h-16 mt-6 rounded-full bg-yellow-300' />
         <h3 className='font-bold'>Welcome to ShortChase</h3>
         <p>Predict what's ahead</p>

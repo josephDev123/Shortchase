@@ -63,7 +63,7 @@ const resolveAfter3Sec = new Promise(resolve => setTimeout(resolve, 5000));
 
   return (
     <div className='h-screen flex justify-center items-center w-4/5 mx-auto'>
-        <div className='flex flex-col gap-4 rounded-md p-4 pb-6'>
+        <div className='flex flex-col gap-4 rounded-md p-4 w-full sm:w-1/2 md:w-2/3'>
 
             <Link to='/' className='self-end mt-52 text-2xl'><i className="fa-solid fa-square-xmark"></i></Link>
             <img src='https://raw.githubusercontent.com/josephDev123/Shortchase/master/client/src/assets/images/shortchase-logo.png' alt='' className='w-32 h-32 self-center'/>
@@ -75,7 +75,7 @@ const resolveAfter3Sec = new Promise(resolve => setTimeout(resolve, 5000));
             <Link to='/login' className='text-blue-500'>Use email instead</Link>
 
             <p className='font-medium'>Date of Birth</p>
-            <p className='w-4/5 sm:w-full md:w-4/5 lg:w-4/5 xl:w-4/5 '>This would not be shown publicly. Confirm your age, even if this account is for a business, a pet or 
+            <p className='w-full text-justify md:w-4/5'>This would not be shown publicly. Confirm your age, even if this account is for a business, a pet or 
                 something else
             </p>
             
