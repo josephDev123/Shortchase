@@ -4,7 +4,7 @@ import {Authaxios} from '../utils/axiosInstance'
 import { toast, ToastContainer } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 
-export default function register() {
+export default function Register() {
 
 const [name, setname] = useState('');
 // const [email, setEmail] = useState('');
@@ -26,23 +26,25 @@ const resolveAfter3Sec = new Promise(resolve => setTimeout(resolve, 5000));
         // console.log('All fields must be filled correctly and cannot be empty');
         toast.warn('All fields must be filled correctly and cannot be empty')
         setLoading(false)
+      }else{
+        const res = await Authaxios({
+          url: 'register',
+          method:'post',
+          data: {name, phone, month, day, year}
+        });
+  
+        toast.promise(resolveAfter3Sec,
+          {
+            pending: 'Promise is pending',
+          }
+      )
+        
+        const message =  await res.data;
+        setLoading(false)
+        console.log(message)
+        redirect('/login')
       }
-      const res = await Authaxios({
-        url: 'register',
-        method:'post',
-        data: {name, phone, month, day, year}
-      });
-
-      toast.promise(resolveAfter3Sec,
-        {
-          pending: 'Promise is pending',
-        }
-    )
-      
-      const message =  await res.data;
-      setLoading(false)
-      console.log(message)
-      redirect('/login')
+     
     } catch (error) {
        
       const {status, message} = await error.response.data
