@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import { Link } from 'react-router-dom'
 import {Authaxios} from '../utils/axiosInstance'
+import { toast, ToastContainer } from 'react-toastify';
 
 export default function register() {
 const [name, setname] = useState('');
@@ -16,7 +17,8 @@ const [loading, setLoading] = useState(false);
     setLoading(true)
     try {
       if( !name || !phone || !month || !day || !year){
-        console.log('All fields must be filled correctly and cannot be empty');
+        // console.log('All fields must be filled correctly and cannot be empty');
+        toast.warn('All fields must be filled correctly and cannot be empty')
         setLoading(false)
       }
       const res = await Authaxios({
@@ -31,7 +33,13 @@ const [loading, setLoading] = useState(false);
     } catch (error) {
        
       const {status, message} = await error.response.data
-      console.log(status, message, error)
+      if(!message){
+        toast.error('🦄'+ error.message)
+        // console.log(error.message)
+      }else{
+        // console.log(message)
+        toast.error('🦄 '+message)
+      }
   
     }
   }
@@ -67,6 +75,7 @@ const [loading, setLoading] = useState(false);
             </div>
             <button type='button' onClick={handleRegistration} className='w-full bg-yellow-300 rounded-full p-3 text-slate-900 font-extrabold mt-6 text-center'>Next</button>
         </div>
+        <ToastContainer/>
     </div>
   )
 }

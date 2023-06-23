@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import { Authaxios } from '../utils/axiosInstance';
 import { toast, ToastContainer } from 'react-toastify';
-import "react-toastify/dist/ReactToastify.css";
+
 
 export default function login() {
 const[names, setName]= useState('');
@@ -14,8 +14,9 @@ const [phone, setPhone] = useState('')
   async function handleUserLogin(){
     try {
       if(!names || !phone){
-        console.log('Field(s) is empty')
-        toast.error('Field(s) is empty')
+        // console.log('Field(s) is empty')
+        // toast.error('Field(s) is empty')
+        toast.warn("Field(s) is empty!");
       }else{
         const loginRequest = await Authaxios({
           method:'post',
@@ -23,15 +24,15 @@ const [phone, setPhone] = useState('')
           data:{names, phone}
         })
         const loginResult =  await loginRequest.data
-        console.log(loginResult)
+        // console.log(loginResult)
       }
     } catch (error) {
       const {status, message} = await error.response.data
       if(!message){
         toast.error('🦄'+ error.message)
-        console.log(error.message)
+        // console.log(error.message)
       }else{
-        console.log(message)
+        // console.log(message)
         toast.error('🦄 '+message)
       }
     }
