@@ -12,7 +12,7 @@ const [phone, setPhone] = useState('');
 const [month, setMonth] = useState('');
 const [day, setDay] = useState('');
 const [year, setYear] = useState('');
-// const [loading, setLoading] = useState(false);
+const [loading, setLoading] = useState(false);
 
 const redirect = useNavigate()
 
@@ -87,8 +87,9 @@ const resolveAfter3Sec = new Promise(resolve => setTimeout(resolve, 5000));
               
             </div>
             <button type='button' onClick={handleRegistration} className='w-full bg-yellow-300 rounded-full p-3 text-slate-900 font-extrabold mt-6 text-center'>Next</button>
+            <ToastContainer/>
         </div>
-        <ToastContainer/>
+        
     </div>
   )
 }
